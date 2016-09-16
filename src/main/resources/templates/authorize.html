@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Saleforce Oauth Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h4>Oauth successfully</h4>
+
+  <form th:action="${action_url}" method="POST">
+
+      <input type="hidden" name="refresh_token" th:value="${refresh_token}" />
+      <input type="hidden" name="instance_url" th:value="${instance_url}" />
+      <input type="hidden" name="access_token" th:value="${access_token}" />
+      <input type="hidden" name="token_id" th:value="${token_id}" />
+
+      <pre>
+          {
+          id: <span th:text="${token_id}"></span>
+          instance_url: <span th:text="${instance_url}"></span>
+          refresh_token: <span th:text="${refresh_token}"></span>
+          access_token: <span th:text="${access_token}"></span>
+          }
+      </pre>
+
+      <button>Continue</button>
+  </form>
+
+
+</body>
+</html>
